@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 class VehicleSettings {
     constructor(trim, paint, wheels, interior, msrp, session_id) {
         this.trim = trim;
