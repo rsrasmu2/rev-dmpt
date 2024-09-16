@@ -1,6 +1,7 @@
 .wrapper, html, body {
     height: 100%;
     margin: 0;
+    padding: 0;
 }
 
 .main-row {
@@ -23,6 +24,26 @@
     flex-direction: row;
     flex-basis: 100%;
     flex-wrap: nowrap;
+}
+
+.col1 {
+    flex: 237;
+}
+
+.col2 {
+    flex: 112;
+}
+
+.col3 {
+    flex: 156;
+}
+
+.col4 {
+    flex: 208;
+}
+
+.col5 {
+    flex: 256;
 }
 
 .light {
