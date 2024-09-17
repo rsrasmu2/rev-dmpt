@@ -1,11 +1,20 @@
-if (typeof trimText !== 'undefined') {
-    document.getElementById('trim').textContent = "<%= trimText %>";
-}
+document.addEventListener('DOMContentLoaded', function() {
+    if (serverData.trimText) {
+        console.log("Trim: " + serverData.trimText);
+        document.getElementById('trim').textContent = serverData.trimText;
+    } else {
+        console.log("Trim: undefined");
+    }
 
-if (typeof wheelsTimeVar !== 'undefined') {
-    document.getElementById('wheelsTimeVar').textContent = "<%= wheelsTimeVar %>";
-}
+    if (serverData.wheelsTimeVar) {
+        document.getElementById('wheelsTimeVar').textContent = serverData.wheelsTimeVar;
+    }
 
-if (typeof paintFinishTimeVar !== 'undefined') {
-    document.getElementById('paintFinishTimeVar').textContent = "<%= paintFinishTimeVar %>";
-}
+    if (serverData.paintFinishTimeVar) {
+        document.getElementById('paintFinishTimeVar').textContent = serverData.paintFinishTimeVar;
+    }
+
+    if (serverData.interiorFinishTimeVar) {
+        document.getElementById('interiorFinishTimeVar').textContent = serverData.interiorFinishTimeVar;
+    }
+});

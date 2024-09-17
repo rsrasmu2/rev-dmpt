@@ -5,11 +5,18 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   start()
     .then((settings) => {
-      res.status(200).send("Settings: " + settings);
-      //res.render('index', { trimText: settings.trim });  
-    }).catch(error => {
-      console.error(error);
-      res.status(500).send('Error triggering start() function: ' + error.message);
+      console.log('Settings in route handler:', settings); // Log settings here
+      if (!settings || typeof settings !== 'object') {
+        throw new Error('Invalid settings object received');
+      }
+      const trimText = settings.trim || 'Default Trim'; // Provide a default value
+      res.render('index', { 
+        trimText: trimText
+      });
+    })
+    .catch(error => {
+      console.error('Error in route handler:', error);
+      res.status(500).render('error', { message: 'Internal Server Error' });
     });
 });
 
@@ -44,14 +51,16 @@ async function tryGet(session_id) {
 
       try {
         const data = await response.json();
-        if (data && data.Item) {
-          return JSON.parse(data.Item);
-        } else {
-          throw new Error('Invalid data structure received');
+        console.log('Full data:', data); // Log the full data
+        const settings = data.Item;
+        console.log('Full settings:', settings); // Log the full settings object
+        if (!settings || typeof settings !== 'object') {
+          throw new Error('Invalid settings object');
         }
-      } catch (parseError) {
-        console.error('Error parsing response:', parseError);
-        throw new Error('Failed to parse response data');
+        return settings;
+      } catch (error) {
+        console.error(`Error: ${error.message}`);
+        throw error;
       }
   } catch (error) {
       console.error(`Error: ${error.message}`);
