@@ -5,23 +5,13 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   start()
     .then((settings) => {
-      res.render('index', { trimText: settings.trim });  
+      res.status(200).send("Settings: " + settings);
+      //res.render('index', { trimText: settings.trim });  
     }).catch(error => {
       console.error(error);
       res.status(500).send('Error triggering start() function: ' + error.message);
     });
 });
-
-class VehicleSettings {
-  constructor(trim, paint, wheels, interior, msrp, session_id) {
-      this.trim = trim;
-      this.paint = paint;
-      this.wheels = wheels;
-      this.interior = interior;
-      this.msrp = msrp;
-      this.session_id = session_id;
-  }
-}
 
 class SessionId {
   constructor(session_id) {
