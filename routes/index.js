@@ -3,12 +3,13 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  start().then(() => {
-    res.render('index', { trimText: 'TEST' });  
-  }).catch(error => {
-    console.error(error);
-    res.status(500).send('Error triggering start() function');
-  });
+  start()
+    .then((settings) => {
+      res.render('index', { trimText: settings.trim });  
+    }).catch(error => {
+      console.error(error);
+      res.status(500).send('Error triggering start() function');
+    });
 });
 
 class VehicleSettings {
@@ -29,16 +30,13 @@ class SessionId {
 }
 
 function start() {
-  console.log(process.env.INVOKE_URL);
-  tryGet(1);
+  return tryGet(1);
 }
 
 async function tryGet(session_id) {
   const url = `${process.env.INVOKE_URL}/get-vehicle-settings`;
 
   const body = JSON.stringify(new SessionId(session_id));
-
-  console.log("Get: " + body);
 
   try {
       const response = await fetch(url, {
@@ -54,10 +52,17 @@ async function tryGet(session_id) {
           throw new Error(`Failed to retrieve data: ${response.statusText}`);
       }
 
-      console.log(`Completed: ${response.status}`);
-      const data = await response.json();
-      const settings = data.Item;
-      console.log(`Settings: ${settings.trim}`);
+      try {
+        const data = await response.json();
+        if (data && data.Item) {
+          return JSON.parse(data.Item);
+        } else {
+          throw new Error('Invalid data structure received');
+        }
+      } catch (parseError) {
+        console.error('Error parsing response:', parseError);
+        throw new Error('Failed to parse response data');
+      }
   } catch (error) {
       console.error(`Error: ${error.message}`);
   }
