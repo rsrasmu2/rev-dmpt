@@ -49,3 +49,5 @@ class VehicleSettings {
         console.error(`Error: ${error.message}`);
     }
   }
+
+module.exports = start;
