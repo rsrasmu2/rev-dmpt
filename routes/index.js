@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
       res.render('index', { trimText: settings.trim });  
     }).catch(error => {
       console.error(error);
-      res.status(500).send('Error triggering start() function');
+      res.status(500).send('Error triggering start() function: ' + error.message);
     });
 });
 
