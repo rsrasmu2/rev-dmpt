@@ -46,6 +46,14 @@
     flex: 256;
 }
 
+.survey-col {
+    flex: 620;
+}
+
+.text-padding {
+    padding-left: 16px;
+}
+
 .light {
     background-color: #bfb0c7;
 }
