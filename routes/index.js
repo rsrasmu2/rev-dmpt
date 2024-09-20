@@ -12,26 +12,24 @@ router.get('/', function(req, res, next) {
       const wheels = settings.wheels;
       const exterior = settings.exterior;
       const interior = settings.interior;
-      const trimTime = settings.trimTime.toFixed(2);
-      const wheelsTime = settings.wheelsTime.toFixed(2);
-      const exteriorTime = settings.exteriorTime.toFixed(2);
-      const interiorTime = settings.interiorTime.toFixed(2);
-      const questionaireTime = settings.questionaireTime.toFixed(2);
-      const totalTime = (parseFloat(wheelsTime) + parseFloat(exteriorTime) + parseFloat(interiorTime)).toFixed(2);
+      const trimTime = toTime(settings.trimTime);
+      const wheelsTime = toTime(settings.wheelsTime);
+      const exteriorTime = toTime(settings.exteriorTime);
+      const interiorTime = toTime(settings.interiorTime);
+      const questionaireTime = toTime(settings.questionaireTime);
+      const totalTimeValue = (parseFloat(settings.trimTime) + parseFloat(settings.wheelsTime) + parseFloat(settings.exteriorTime) + parseFloat(settings.interiorTime));
       let trimPercent = "";
       let wheelsPercent = "";
       let exteriorPercent = "";
       let interiorPercent = "";
-      if (totalTime > 0) {
-        trimPercent = Math.round(parseFloat(trimTime) / parseFloat(totalTime) * 100) + "%";
-        wheelsPercent = Math.round(parseFloat(wheelsTime) / parseFloat(totalTime) * 100) + "%";
-        exteriorPercent = Math.round(parseFloat(exteriorTime) / parseFloat(totalTime) * 100) + "%";
-        interiorPercent = Math.round(parseFloat(interiorTime) / parseFloat(totalTime) * 100) + "%";
+      if (totalTimeValue > 0) {
+        trimPercent = Math.round(parseFloat(settings.trimTime) / parseFloat(totalTimeValue) * 100) + "%";
+        wheelsPercent = Math.round(parseFloat(settings.wheelsTime) / parseFloat(totalTimeValue) * 100) + "%";
+        exteriorPercent = Math.round(parseFloat(settings.exteriorTime) / parseFloat(totalTimeValue) * 100) + "%";
+        interiorPercent = Math.round(parseFloat(settings.interiorTime) / parseFloat(totalTimeValue) * 100) + "%";
       }
-      const time = Math.round(parseFloat(questionaireTime) + parseFloat(totalTime));
-      const minutes = Math.floor(time / 60);
-      const seconds = time % 60;
-      const timeInSurvey = `${minutes}:${seconds}`;
+      const timeInSurvey = toTime(totalTimeValue + parseFloat(settings.questionaireTime));
+      const totalTime = toTime(totalTimeValue);
       const question1 = settings.question1;
       const question2 = settings.question2;
       const question3 = settings.question3;
@@ -84,6 +82,13 @@ class SessionId {
   constructor(session_id) {
       this.session_id = session_id;
   }
+}
+
+function toTime(time) {
+  const minutes = Math.floor(time / 60).toString().padStart(2, '0');
+  const remainingSeconds = Math.round(time % 60);
+  const seconds = remainingSeconds.toString().padStart(2, '0');
+  return `${minutes}:${seconds}`;
 }
 
 function start() {

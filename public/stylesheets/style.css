@@ -20,26 +20,30 @@ html, body {
 }
 
 .title {
-    font-size: 32px;
+    font-size: 28px;
     padding-left: 16px;
     font-weight: bold;
 }
 
 .entry {
-    font-size: 28px;
-    padding-left: 16px;
+    font-size: 24px;
+    padding-left: 14px;
 }
 
 .light {
     background-color: #bfb0c7;
     border: 1px solid black;
+    display: flex;
     align-items: center;
+    justify-content: flex-start;
 }
 
 .dark {
     background-color: #9575aa;
     border: 1px solid black;
+    display: flex;
     align-items: center;
+    justify-content: flex-start;
 }
 
 .car-preview-container {
@@ -80,4 +84,16 @@ html, body {
 .survey-results-col {
     grid-column: 4 / 8;
     grid-row: 11 / 16;
+}
+
+.total-points {
+    font-size: 36px;
+    padding-left: 18px;
+    font-weight: bold;
+}
+
+.total-rating {
+    font-size: 36px;
+    padding-left: 18px;
+    font-weight: bold;
 }
