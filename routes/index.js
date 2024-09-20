@@ -8,19 +8,22 @@ router.get('/', function(req, res, next) {
       if (!settings || typeof settings !== 'object') {
         throw new Error('Invalid settings object received');
       }
-      const trim = "TRIM: " + settings.trim;
+      const trim = settings.trim;
       const wheels = settings.wheels;
       const exterior = settings.exterior;
       const interior = settings.interior;
+      const trimTime = settings.trimTime.toFixed(2);
       const wheelsTime = settings.wheelsTime.toFixed(2);
       const exteriorTime = settings.exteriorTime.toFixed(2);
       const interiorTime = settings.interiorTime.toFixed(2);
       const questionaireTime = settings.questionaireTime.toFixed(2);
       const totalTime = (parseFloat(wheelsTime) + parseFloat(exteriorTime) + parseFloat(interiorTime)).toFixed(2);
+      let trimPercent = "";
       let wheelsPercent = "";
       let exteriorPercent = "";
       let interiorPercent = "";
       if (totalTime > 0) {
+        trimPercent = Math.round(parseFloat(trimTime) / parseFloat(totalTime) * 100) + "%";
         wheelsPercent = Math.round(parseFloat(wheelsTime) / parseFloat(totalTime) * 100) + "%";
         exteriorPercent = Math.round(parseFloat(exteriorTime) / parseFloat(totalTime) * 100) + "%";
         interiorPercent = Math.round(parseFloat(interiorTime) / parseFloat(totalTime) * 100) + "%";
@@ -48,6 +51,8 @@ router.get('/', function(req, res, next) {
       }
       res.render('index', { 
         trim: trim,
+        trimTime: trimTime,
+        trimPercent: trimPercent,
         wheels: wheels,
         exterior: exterior,
         interior: interior,

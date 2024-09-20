@@ -15,6 +15,10 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('interior').textContent = serverData.interior;
     }
 
+    if (serverData.trimTime) {
+        document.getElementById('trimTime').textContent = serverData.trimTime;
+    }
+
     if (serverData.wheelsTime) {
         document.getElementById('wheelsTime').textContent = serverData.wheelsTime;
     }
@@ -29,6 +33,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (serverData.totalTime) {
         document.getElementById('totalTime').textContent = serverData.totalTime;
+    }
+
+    if (serverData.trimPercent) {
+        document.getElementById('trimPercent').textContent = serverData.trimPercent;
     }
 
     if (serverData.wheelsPercent) {

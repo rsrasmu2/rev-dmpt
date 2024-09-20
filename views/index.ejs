@@ -7,197 +7,151 @@
 </head>
 <body>
     <div class='wrapper'>
-        <div class = 'main-row'>
-            <div class='column light' style="flex: 398;">
-                <div class='row border' style="flex:339;">
-                    <div style="display: flex; flex-direction: column; width: 100%;">
-                        <div style="display: flex; justify-content: center; align-items: center; height: 100%; width: 100%;">
-                            <img src="/images/car-preview.png" alt="Car Preview" style="object-fit: contain;">
-                        </div>
-                    </div>
-                </div>
-                <div class='row border' style="flex: 1027;">
-                    <h1 id="trim" class="text-padding"></h1>
-                </div>
-            </div>
-            <div class='column' style="flex: 968;">
-                <div class='row light' style="flex: 143;">
-                    <div class='column' style="flex: 237;">
-                        <div class='row border'>
-                            <h2 class="text-padding">Client</h3>
-                        </div>
-                        <div class='row border'>
-                            <h3 id="client" class="text-padding">General Motors</h2>
-                        </div>
-                    </div>
-                    <div class='column' style="flex: 728;">
-                        <div class='row border'>
-                            <h2 class="text-padding">Participant ID</h2>
-                        </div>
-                        <div class='row border'>
-                            <h3 id="survey_id" class="text-padding">01246</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class='row dark border' style="flex: 84">
-                    <h1 class="text-padding">Data Parameters: Cadillac Lyriq</h1>
-                </div>
-                <div class='row dark' style="flex: 289;">
-                    <div class='column'>
-                        <div class='row' style="flex: 84;">
-                            <div class='column border col1'>
-                                <h2 class="text-padding"></h2>
-                            </div>
-                            <div class='column border col2'>
-                                <h2 class="text-padding">Wheels</h2>
-                            </div>
-                            <div class='column border col3'>
-                                <h2 class="text-padding">Exterior</h2>
-                            </div>
-                            <div class='column border col4'>
-                                <h2 class="text-padding">Interior</h2>
-                            </div>
-                            <div class='column border col5'>
-                                <h2 class="text-padding">Total</h2>
-                            </div>
-                        </div>
-                        <div class='row' style="flex: 84;">
-                            <div class='column border col1'>
-                                <h2 class="text-padding">Config Time</h2>
-                            </div>
-                            <div class='column border col2'>
-                                <h3 id="wheelsTime" class="text-padding"></h3>
-                            </div>
-                            <div class='column border col3'>
-                                <h3 id="exteriorTime" class="text-padding"></h3>
-                            </div>
-                            <div class='column border col4'>
-                                <h3 id="interiorTime" class="text-padding"></h3>
-                            </div>
-                            <div class='column border col5'>
-                                <h3 id="totalTime" class="text-padding"></h3>
-                            </div>
-                        </div>
-                        <div class='row' style="flex: 84;">
-                            <div class='column border col1'>
-                                <h2 class="text-padding">Config</h2>
-                            </div>
-                            <div class='column border col2'>
-                                <h3 id="wheels" class="text-padding"></h3>
-                            </div>
-                            <div class='column border col3'>
-                                <h3 id="exterior" class="text-padding"></h3>
-                            </div>
-                            <div class='column border col4'>
-                                <h3 id="interior" class="text-padding"></h3>
-                            </div>
-                            <div class='column border col5'>
-                            </div>
-                        </div>
-                        <div class='row' style="flex: 94;">
-                            <div class='column border col1'>
-                                <h2 class="text-padding">Percent Config.</h2>
-                            </div>
-                            <div class='column border col2'>
-                                <h3 id="wheelsPercent" class="text-padding"></h3>
-                            </div>
-                            <div class='column border col3'>
-                                <h3 id="exteriorPercent" class="text-padding"></h3>
-                            </div>
-                            <div class='column border col4'>
-                                <h3 id="interiorPercent" class="text-padding"></h3>
-                            </div>
-                            <div class='column border col5'>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class='row light' style="flex: 33;">
-                    <div class='column border col1'>
-                        <h2 class="text-padding"></h2> 
-                    </div>
-                    <div class='column border col2'>
-                        <h2 class="text-padding">Total</h2>
-                    </div>
-                    <div class='column border col3'>
-                        <h2 class="text-padding"></h2>
-                    </div>
-                    <div class='column border col4'>
-                        <h2 class="text-padding"></h2>
-                    </div>
-                    <div class='column border col5'>
-                        <h2 class="text-padding"></h2>
-                    </div>
-                </div>
-                <div class='row dark' style="flex: 63;">
-                    <div class='column border col1'>
-                        <h2 class="text-padding">Time in Survey</h2>
-                    </div>
-                    <div class='column border col2'>
-                        <h2 id="timeInSurvey" class="text-padding"></h2>
-                    </div>
-                    <div class='column border col3'>
-                        <h2 class="text-padding"></h2>
-                    </div>
-                    <div class='column border col4'>
-                        <h2 class="text-padding"></h2>
-                    </div>
-                    <div class='column border col5'>
-                        <h2 class="text-padding"></h2>
-                    </div>
-                </div>
-                <div class='row light' style="flex: 63;">
-                    <div class='column border col1'>
-                        <h1 class="text-padding">Survey</h1>
-                    </div>
-                    <div class='column border col2'>
-                        <h1 class="text-padding">Results</h1>
-                    </div>
-                    <div class='column border survey-col'>
-                        <h1 class="text-padding">Total Score</h1>
-                    </div>
-                </div>
-                <div class='row dark' style="flex: 252;">
-                    <div class='column col1'>
-                        <div class='row border'>
-                            <h2 class="text-padding">Question 1</h2>
-                        </div>
-                        <div class='row border'>
-                            <h2 class="text-padding">Question 2</h2>
-                        </div>
-                        <div class='row border'>
-                            <h2 class="text-padding">Question 3</h2>
-                        </div>
-                        <div class='row border'>
-                            <h2 class="text-padding">Question 4</h2>
-                        </div>
-                        <div class='row border'>
-                            <h2 class="text-padding">Question 5</h2>
-                        </div>
-                    </div>
-                    <div class='column col2'>
-                        <div class='row border'>
-                            <h2 id="question1" class="text-padding">10</h2>
-                        </div>
-                        <div class='row border'>
-                            <h2 id="question2" class="text-padding">10</h2>
-                        </div>
-                        <div class='row border'>
-                            <h2 id="question3" class="text-padding">10</h2>
-                        </div>
-                        <div class='row border'>
-                            <h2 id="question4" class="text-padding">10</h2>
-                        </div>
-                        <div class='row border'>
-                            <h2 id="question5" class="text-padding">10</h2>
-                        </div>
-                    </div>
-                    <div class='column border survey-col'>
-                        <h1 id="surveyTotal" class="text-padding"></h1>
-                        <h2 id="surveyRating" class="text-padding"></h2>
-                    </div>
-                </div>
-            </div>
+        <div class="light car-preview-container">
+            <img src="/images/car-preview.png" alt="Car Preview" style="object-fit: contain;">
+        </div>
+        <div class="light client">
+            <p class="title">Client</p>
+        </div>
+        <div class="light participant-id">
+            <p class="title"> Participant ID</p>
+        </div>
+        <div class="light client">
+            <p class="entry">General Motors</p>
+        </div>
+        <div class="light participant-id">
+            <p class="entry">01246</p>
+        </div>
+        <div class="light left-col"></div>
+        <div class="dark field-row">
+            <p class="title">Data Parameters: Cadillac Lyriq</p>
+        </div>
+        <div class="light"></div>
+        <div class="light">
+            <p class="title">Trim</p>
+        </div>
+        <div class="light">
+            <p class="title">Wheels</p>
+        </div>
+        <div class="light">
+            <p class="title">Exterior</p>
+        </div>
+        <div class="light">
+            <p class="title">Interior</p>
+        </div>
+        <div class="light">
+            <p class="title">Total</p>
+        </div>
+        <div class="dark">
+            <p class="title">Config</p>
+        </div>
+        <div class="dark">
+            <p id="trim" class="entry"></p>
+        </div>
+        <div class="dark">
+            <p id="wheels" class="entry"></p>
+        </div>
+        <div class="dark">
+            <p id="exterior" class="entry"></p>
+        </div>
+        <div class="dark">
+            <p id="interior" class="entry"></p>
+        </div>
+        <div class="dark"></div>
+        <div class="dark">
+            <p class="title">Config Time</p>
+        </div>
+        <div class="dark">
+            <p id="trimTime" class="entry"></p>
+        </div>
+        <div class="dark">
+            <p id="wheelsTime" class="entry"></p>
+        </div>
+        <div class="dark">
+            <p id="exteriorTime" class="entry"></p>
+        </div>
+        <div class="dark">
+            <p id="interiorTime" class="entry"></p>
+        </div>
+        <div class="dark">
+            <p id="totalTime" class="entry"></p>
+        </div>
+        <div class="dark">
+            <p class="title">Percent Config</p>
+        </div>
+        <div class="dark">
+            <p id="trimPercent" class="entry"></p>
+        </div>
+        <div class="dark">
+            <p id="wheelsPercent" class="entry"></p>
+        </div>
+        <div class="dark">
+            <p id="exteriorPercent" class="entry"></p>
+        </div>
+        <div class="dark">
+            <p id="interiorPercent" class="entry"></p>
+        </div>
+        <div class="dark"></div>
+        <div class="light"></div>
+        <div class="light">
+            <p class="title">Total</p>
+        </div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="dark">
+            <p class="title">Time in Survey</p>
+        </div>
+        <div class="dark">
+            <p id="timeInSurvey" class="entry"></p>
+        </div>
+        <div class="dark"></div>
+        <div class="dark"></div>
+        <div class="dark"></div>
+        <div class="dark"></div>
+        <div class="light">
+            <p class="title">Survey</p>
+        </div>
+        <div class="light">
+            <p class="title">Results</p>
+        </div>
+        <div class="light survey-col">
+            <p class="title">Total Score</p>
+        </div>
+        <div class="dark">
+            <p class="title">Question 1</p>
+        </div>
+        <div class="dark">
+            <p id="question1" class="entry"></p>
+        </div>
+        <div class="survey-results-col dark">
+            <p id="surveyTotal" class="title"></p>
+            <p id="surveyRating" class="title"></p>
+        </div>
+        <div class="dark">
+            <p class="title">Question 2</p>
+        </div>
+        <div class="dark">
+            <p id="question2" class="entry"></p>
+        </div>
+        <div class="dark">
+            <p class="title">Question 3</p>
+        </div>
+        <div class="dark">
+            <p id="question3" class="entry"></p>
+        </div>
+        <div class="dark">
+            <p class="title">Question 4</p>
+        </div>
+        <div class="dark">
+            <p id="question4" class="entry"></p>
+        </div>
+        <div class="dark">
+            <p class="title">Question 5</p>
+        </div>
+        <div class="dark">
+            <p id="question5" class="entry"></p>
         </div>
     </div>
     <script>
@@ -207,10 +161,12 @@
             wheels: "<%= typeof wheels !== 'undefined' ? wheels : '' %>",
             exterior: "<%= typeof exterior !== 'undefined' ? exterior : '' %>",
             interior: "<%= typeof interior !== 'undefined' ? interior : '' %>",
+            trimTime: "<%= typeof trimTime !== 'undefined' ? trimTime : '' %>",
             wheelsTime: "<%= typeof wheelsTime !== 'undefined' ? wheelsTime : '' %>",
             exteriorTime: "<%= typeof exteriorTime !== 'undefined' ? exteriorTime : '' %>",
             interiorTime: "<%= typeof interiorTime !== 'undefined' ? interiorTime : '' %>",
             totalTime: "<%= typeof totalTime !== 'undefined' ? totalTime : '' %>",
+            trimPercent: "<%= typeof trimPercent !== 'undefined' ? trimPercent : '' %>",
             wheelsPercent: "<%= typeof wheelsPercent !== 'undefined' ? wheelsPercent : '' %>",
             exteriorPercent: "<%= typeof exteriorPercent !== 'undefined' ? exteriorPercent : '' %>",
             interiorPercent: "<%= typeof interiorPercent !== 'undefined' ? interiorPercent : '' %>",
