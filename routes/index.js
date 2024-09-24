@@ -38,11 +38,11 @@ router.get('/', function(req, res, next) {
       const surveyTotal = question1 + question2 + question3 + question4 + question5;
       const avgRating = surveyTotal / 5;
       let surveyRating;
-      if (avgRating < 4) {
+      if (avgRating < 2) {
         surveyRating = "Bad";
-      } else if (avgRating < 7) {
+      } else if (avgRating < 3) {
         surveyRating = "Decent";
-      } else if (avgRating < 9) {
+      } else if (avgRating < 4) {
         surveyRating = "Good";
       } else {
         surveyRating = "Excellent";
