@@ -21,12 +21,18 @@ html, body {
 
 .title {
     font-size: 24px;
-    padding-left: 16px;
     font-weight: bold;
+    padding-left: 16px;
 }
 
 .entry {
     font-size: 20px;
+    padding-left: 16px;
+}
+
+.client-entry {
+    font-size: 28px;
+    font-weight: bold;
     padding-left: 16px;
 }
 
@@ -35,11 +41,11 @@ html, body {
 }
 
 .dark p {
-    color: #ffffff;
+    color: #000000;
 }
 
 .light {
-    background-color: #194390;
+    background-color: #0372cf;
     border: 1px solid black;
     display: flex;
     align-items: center;
@@ -47,7 +53,7 @@ html, body {
 }
 
 .dark {
-    background-color: #5c93cc;
+    background-color: #ffffff    ;
     border: 1px solid black;
     display: flex;
     align-items: center;
@@ -67,6 +73,7 @@ html, body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    padding: 16px;
 }
 
 .left-col {
