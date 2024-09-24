@@ -30,8 +30,16 @@ html, body {
     padding-left: 16px;
 }
 
+.light p {
+    color: #ffffff;
+}
+
+.dark p {
+    color: #ffffff;
+}
+
 .light {
-    background-color: #bfb0c7;
+    background-color: #194390;
     border: 1px solid black;
     display: flex;
     align-items: center;
@@ -39,7 +47,7 @@ html, body {
 }
 
 .dark {
-    background-color: #9575aa;
+    background-color: #5c93cc;
     border: 1px solid black;
     display: flex;
     align-items: center;
